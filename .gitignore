@@ -1,0 +1,17 @@
+# Compiled class files
+backend/target/
+*.class
+
+# Node dependencies and build
+frontend/node_modules/
+frontend/dist/
+
+# Log files
+*.log
+
+# IDE & Editor files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
