@@ -63,3 +63,4 @@ public class DustbinController {
         return ResponseEntity.ok(updated);
     }
 }
+

@@ -31,3 +31,4 @@ public class ComplaintCreateDTO {
     public String getPhotographUrl() { return photographUrl; }
     public void setPhotographUrl(String photographUrl) { this.photographUrl = photographUrl; }
 }
+

@@ -16,3 +16,4 @@ public class ShortestPathRequestDTO {
     public String getEndLocationCode() { return endLocationCode; }
     public void setEndLocationCode(String endLocationCode) { this.endLocationCode = endLocationCode; }
 }
+

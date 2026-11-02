@@ -20,3 +20,4 @@ Write-Host " Open your browser at: http://localhost:5173" -ForegroundColor Cyan
 Write-Host " Backend REST APIs at: http://localhost:8080/api/analytics/dashboard" -ForegroundColor Cyan
 Write-Host " H2 Database Console at: http://localhost:8080/h2-console" -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Green
+

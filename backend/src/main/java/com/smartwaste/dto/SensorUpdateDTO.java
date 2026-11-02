@@ -20,3 +20,4 @@ public class SensorUpdateDTO {
     public Boolean getIsSimulated() { return isSimulated; }
     public void setIsSimulated(Boolean isSimulated) { this.isSimulated = isSimulated; }
 }
+

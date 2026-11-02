@@ -11,3 +11,4 @@ public interface RoadConnectionRepository extends JpaRepository<RoadConnection, 
     List<RoadConnection> findBySourceLocationCode(String sourceLocationCode);
     List<RoadConnection> findByTargetLocationCode(String targetLocationCode);
 }
+

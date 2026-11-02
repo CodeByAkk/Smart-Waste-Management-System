@@ -12,3 +12,4 @@ public interface CollectionStaffRepository extends JpaRepository<CollectionStaff
     Optional<CollectionStaff> findByEmployeeId(String employeeId);
     List<CollectionStaff> findByWorkingStatus(CollectionStaff.WorkingStatus status);
 }
+

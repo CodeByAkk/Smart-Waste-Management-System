@@ -88,3 +88,4 @@ public class CollectionHistory {
     public String getCollectionStatus() { return collectionStatus; }
     public void setCollectionStatus(String collectionStatus) { this.collectionStatus = collectionStatus; }
 }
+

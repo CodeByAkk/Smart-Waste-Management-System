@@ -14,3 +14,4 @@ public interface CollectionTaskRepository extends JpaRepository<CollectionTask, 
     List<CollectionTask> findByStaffId(Long staffId);
     List<CollectionTask> findByVehicleId(Long vehicleId);
 }
+

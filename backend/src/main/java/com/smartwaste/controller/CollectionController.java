@@ -29,3 +29,4 @@ public class CollectionController {
         return ResponseEntity.ok(collectionService.completeCollection(request));
     }
 }
+

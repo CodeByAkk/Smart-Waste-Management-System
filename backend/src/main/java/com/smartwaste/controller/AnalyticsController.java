@@ -38,3 +38,4 @@ public class AnalyticsController {
         return ResponseEntity.ok(Map.of("message", "All notifications marked as read."));
     }
 }
+

@@ -19,3 +19,4 @@ public class OptimizeRouteRequestDTO {
     public List<String> getSpecificDustbinCodes() { return specificDustbinCodes; }
     public void setSpecificDustbinCodes(List<String> specificDustbinCodes) { this.specificDustbinCodes = specificDustbinCodes; }
 }
+

@@ -17,3 +17,4 @@ public class CompleteCollectionRequestDTO {
     public Double getCollectedWasteQuantity() { return collectedWasteQuantity; }
     public void setCollectedWasteQuantity(Double collectedWasteQuantity) { this.collectedWasteQuantity = collectedWasteQuantity; }
 }
+

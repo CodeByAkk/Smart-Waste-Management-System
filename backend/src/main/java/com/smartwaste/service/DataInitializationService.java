@@ -240,3 +240,4 @@ public class DataInitializationService implements CommandLineRunner {
         ));
     }
 }
+

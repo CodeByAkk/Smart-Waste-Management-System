@@ -123,3 +123,4 @@ export const api = {
   }).then(handleResponse),
   getAlgorithmsInfo: () => fetch(`${API_BASE}/dsa/algorithms-info`).then(handleResponse)
 };
+

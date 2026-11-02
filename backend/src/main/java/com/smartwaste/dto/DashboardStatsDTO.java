@@ -91,3 +91,4 @@ public class DashboardStatsDTO {
     public List<AreaWasteStat> getAreaWasteStats() { return areaWasteStats; }
     public void setAreaWasteStats(List<AreaWasteStat> areaWasteStats) { this.areaWasteStats = areaWasteStats; }
 }
+

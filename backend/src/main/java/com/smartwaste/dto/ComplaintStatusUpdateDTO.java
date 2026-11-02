@@ -16,3 +16,4 @@ public class ComplaintStatusUpdateDTO {
     public String getAdminNotes() { return adminNotes; }
     public void setAdminNotes(String adminNotes) { this.adminNotes = adminNotes; }
 }
+

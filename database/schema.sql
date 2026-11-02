@@ -170,3 +170,4 @@ CREATE TABLE IF NOT EXISTS road_connections (
     INDEX idx_source (source_location_code),
     INDEX idx_target (target_location_code)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+

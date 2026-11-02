@@ -48,3 +48,4 @@ public class RoadConnection {
     public Boolean getIsTwoWay() { return isTwoWay; }
     public void setIsTwoWay(Boolean isTwoWay) { this.isTwoWay = isTwoWay; }
 }
+

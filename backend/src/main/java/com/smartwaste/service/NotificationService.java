@@ -61,3 +61,4 @@ public class NotificationService {
         return alerts.stream().filter(a -> !a.isRead()).count();
     }
 }
+

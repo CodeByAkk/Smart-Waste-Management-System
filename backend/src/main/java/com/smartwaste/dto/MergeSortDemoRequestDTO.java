@@ -13,3 +13,4 @@ public class MergeSortDemoRequestDTO {
     public Boolean getAscending() { return ascending; }
     public void setAscending(Boolean ascending) { this.ascending = ascending; }
 }
+

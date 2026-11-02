@@ -280,3 +280,4 @@ To showcase this application during college project evaluation or viva:
 6. **Role Perspectives**:
    - Switch role to **Staff** to view the collection worker workflow and click **"Mark as Collected"** to reset a dustbin to 0%.
    - Switch role to **Public** to file and track a citizen complaint.
+
