@@ -1,26 +1,36 @@
 $ErrorActionPreference = "Stop"
 
+$rootDir = $PSScriptRoot
 Write-Host ">>> Locating Java and .m2 dependencies..."
-$javac = "C:\Program Files\Java\jdk-26.0.1\bin\javac.exe"
-if (-not (Test-Path $javac)) {
-    $javac = "javac"
+
+$javac = "javac"
+if (Test-Path "C:\Program Files\Java\jdk-26.0.1\bin\javac.exe") {
+    $javac = "C:\Program Files\Java\jdk-26.0.1\bin\javac.exe"
+} elseif ($env:JAVA_HOME -and (Test-Path "$env:JAVA_HOME\bin\javac.exe")) {
+    $javac = "$env:JAVA_HOME\bin\javac.exe"
 }
 
-$targetClasses = "d:\projects\ADSA\backend\target\classes"
+$targetClasses = Join-Path $rootDir "backend\target\classes"
 if (Test-Path $targetClasses) {
     Remove-Item -Recurse -Force $targetClasses
 }
 New-Item -ItemType Directory -Force -Path $targetClasses | Out-Null
 
-$jars = (Get-ChildItem "C:\Users\LOQ\.m2\repository" -Filter "*.jar" -Recurse | Where-Object { 
+$m2Repo = Join-Path $env:USERPROFILE ".m2\repository"
+if (-not (Test-Path $m2Repo)) {
+    Write-Warning ".m2 repository not found at $m2Repo. If you have Maven installed, run 'mvn clean compile' inside backend folder."
+}
+
+$jars = (Get-ChildItem $m2Repo -Filter "*.jar" -Recurse -ErrorAction SilentlyContinue | Where-Object { 
     $_.FullName -notmatch "sources" -and 
     $_.FullName -notmatch "javadoc" -and 
     $_.FullName -notmatch "slf4j.*1\.7\."
 } | Select-Object -ExpandProperty FullName) -join ";"
 
-$javaFiles = Get-ChildItem -Path "d:\projects\ADSA\backend\src\main\java" -Filter "*.java" -Recurse | Select-Object -ExpandProperty FullName
+$srcDir = Join-Path $rootDir "backend\src\main\java"
+$javaFiles = Get-ChildItem -Path $srcDir -Filter "*.java" -Recurse | Select-Object -ExpandProperty FullName
 
-$sourcesFile = "d:\projects\ADSA\backend\sources.txt"
+$sourcesFile = Join-Path $rootDir "backend\sources.txt"
 [System.IO.File]::WriteAllLines($sourcesFile, $javaFiles)
 
 Write-Host ">>> Compiling $($javaFiles.Count) Java source files with javac..."
@@ -32,7 +42,8 @@ if ($process.ExitCode -ne 0) {
 }
 
 Write-Host ">>> Copying resource files..."
-$resources = Get-ChildItem -Path "d:\projects\ADSA\backend\src\main\resources"
+$resourcesDir = Join-Path $rootDir "backend\src\main\resources"
+$resources = Get-ChildItem -Path $resourcesDir
 foreach ($r in $resources) {
     Copy-Item -Path $r.FullName -Destination $targetClasses -Force
 }

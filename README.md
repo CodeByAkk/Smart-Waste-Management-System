@@ -186,6 +186,41 @@ A complete DDL script is provided in [`database/schema.sql`](file:///d:/projects
 
 ## 7. Installation & Execution Guide
 
+### 🌐 GitHub Repository
+```bash
+git clone https://github.com/CodeByAkk/Smart-Waste-Management-System.git
+cd Smart-Waste-Management-System
+```
+
+---
+
+### Option A: Universal Docker Deployment (Deployable on Any Device / OS / Cloud)
+Runs anywhere Docker is installed without needing Java, Maven, or Node.js pre-installed on the host machine:
+
+```bash
+# Build and run containers
+docker compose up --build -d
+
+# Access applications:
+# Frontend Dashboard: http://localhost:5173 (or http://localhost)
+# Backend REST APIs:  http://localhost:8080/api/analytics/dashboard
+
+# To stop:
+docker compose down
+```
+
+---
+
+### Option B: macOS / Linux Quick Launch
+```bash
+chmod +x start-all.sh
+./start-all.sh
+```
+
+---
+
+### Option C: Windows Native Launch
+
 ### Prerequisites
 - **Java**: JDK 21 or later
 - **Node.js**: v18+ (tested on Node v24.20.0, npm 11.19.0)
